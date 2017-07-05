@@ -19,7 +19,6 @@ const API_KEY = 'AIzaSyDPu4gI516Z3xLVspNh01SYceO19bmFyE0';
 }*/
 
 class App extends Component {
-
 	constructor(props) {
 		super(props);
 
@@ -32,36 +31,41 @@ class App extends Component {
 	}
 
 	videoSearch(term) {
-		YTSearch({
-			key: API_KEY,
-			term: term
-		}, (videos) => {
-			this.setState({ 
-				videos: videos,
-				selectedVideo: videos[0]
-			})
-		});
+		YTSearch(
+			{
+				key: API_KEY,
+				term: term
+			},
+			videos => {
+				this.setState({
+					videos: videos,
+					selectedVideo: videos[0]
+				});
+			}
+		);
 	}
 
 	render() {
-
+		/*
+			throttle search term input change by using lodash.debounce
+		*/
 		const videoSearch = _.debounce((term) => {
-			this.videoSearch(term)
+			this.videoSearch(term);
 		}, 300);
 
 		return (
 			<div>
-				<SearchBar onSearchTermChange={videoSearch}/>
+				<SearchBar onSearchTermChange={videoSearch} />
 				<VideoDetail video={this.state.selectedVideo} />
-				<VideoList 
-					onVideoSelect={ selectedVideo => this.setState({selectedVideo}) }
-					videos={this.state.videos} />
+				<VideoList
+					onVideoSelect={selectedVideo => this.setState({ selectedVideo })}
+					videos={this.state.videos}
+				/>
 			</div>
-		)
+		);
 	}
 }
 
-
 // Take this components generated html and put it on the page (in the DOM)
 // render component instance of App by using <App /> instead of passing App component class to the render() function
-ReactDOM.render( < App / > , document.querySelector('.container'));
+ReactDOM.render(<App />, document.querySelector('.container'));

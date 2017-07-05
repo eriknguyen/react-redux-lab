@@ -1,8 +1,12 @@
 import React from 'react';
 
 const VideoListItem = ({video, onVideoSelect}) => {
-	// const video = props.video;
-	// const onVideoSelect = props.onVideoSelect;
+	/*
+		ES6: Replace props object by directly referencing video, onVideoSelect so the below assignments are not needed
+
+		// const video = props.video;
+		// const onVideoSelect = props.onVideoSelect;
+	*/
 	const imageUrl = video.snippet.thumbnails.default.url;
 
 	return (
@@ -17,6 +21,6 @@ const VideoListItem = ({video, onVideoSelect}) => {
 			</div>
 		</li>
 	);
-}
+};
 
 export default VideoListItem;
