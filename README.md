@@ -12,3 +12,44 @@
 * Utility library `lodash`: using `_.debounce()` for throttling search term input change
 
 ### Modeling Application State with Redux
+#### Reducer
+* *A function that return a piece of application state*
+    ```
+    // application state
+    {
+      books: [/*book value*/], // -> Books Reducer
+      activeBook: {/*active book value*/} //-> ActiveBook Reducer
+    }
+    ```
+* Implement:
+  * Create a reducer
+  * Wire it up to the application by using a container component
+* Reducer gets 2 arguments: current `state` (only the state that reducer is responsible for) and `action`
+
+#### Container
+* *A component that has direct connection with Redux state*
+* `react-redux`: bridge between `react` and `redux`
+* Choose component to be container: the most parent component that cares about that particular piece of application state
+* Using `connect`: takes a function and a component then produces a container
+* Whenever state changes:
+  - The container will auto re-render
+  - The returned object from `mapStateToProps(state)` function will be assigned as `props` to the component
+
+#### Action & Action creator (for changing state)
+* Action Creator is a function that returns an action object, is called by some client event (user click, ajax load completion)
+* Action has `type` and optional action data 
+    ```
+    {
+      type: BOOK_SELECTED,
+      book: { title: 'Book 1' }
+    }
+    ```
+* Action is auto sent to all reducers
+* The reducer that cares about that action will use the switch to check for it's according `action.type` and use `action` data (`payload`) to update the according piece of state
+* Application state is updated -> all containers are notified of the changes -> containers will re-render with new `props`
+
+#### Review
+* Redux app state is a single plain JS object, completely different from Component state
+* App state is formed by reducers, all combined by `combineReducers` functions
+* Reducer uses action to manipulate/ change app state. Whenever an action is dispatched, it flows through all reducers. Then each reducer has the option to return different piece of state based on type of action that it receives
+* Action must always have `type` and optional data (`payload`, etc.)
