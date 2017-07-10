@@ -14,7 +14,7 @@ ___
 
 ### Modeling Application State with Redux
 ___
-*Project dir: (`redux-book-list`)[https://github.com/eriknguyen/udemy-react-redux/tree/master/redux-book-list]*
+*Project dir: [`redux-book-list`](https://github.com/eriknguyen/udemy-react-redux/tree/master/redux-book-list)*
 #### 1. Reducer
 * *A function that return a piece of application state*
     ```
@@ -59,7 +59,7 @@ ___
 
 ### Redux Middleware
 ___
-*Project dir: (`redux-middleware-weatherapp`)[https://github.com/eriknguyen/udemy-react-redux/tree/master/redux-middleware-weatherapp]*
+*Project dir: [`redux-middleware-weatherapp`](https://github.com/eriknguyen/udemy-react-redux/tree/master/redux-middleware-weatherapp])
 
 #### 1. Binding Context
 * `this.someEventCallback = this.someEventCallback.bind(this);` bind the context of this component to it's function so the `this` keyword in that function will always refer to this component.
