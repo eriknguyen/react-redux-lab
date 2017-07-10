@@ -14,6 +14,7 @@ ___
 
 ### Modeling Application State with Redux
 ___
+*Project dir: (`redux-book-list`)[https://github.com/eriknguyen/udemy-react-redux/tree/master/redux-book-list]*
 #### 1. Reducer
 * *A function that return a piece of application state*
     ```
@@ -58,3 +59,4 @@ ___
 
 ### Redux Middleware
 ___
+*Project dir: (`redux-middleware-weatherapp`)[https://github.com/eriknguyen/udemy-react-redux/tree/master/redux-middleware-weatherapp]*
