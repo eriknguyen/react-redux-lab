@@ -60,3 +60,12 @@ ___
 ### Redux Middleware
 ___
 *Project dir: (`redux-middleware-weatherapp`)[https://github.com/eriknguyen/udemy-react-redux/tree/master/redux-middleware-weatherapp]*
+
+#### 1. Binding Context
+* `this.someEventCallback = this.someEventCallback.bind(this);` bind the context of this component to it's function so the `this` keyword in that function will always refer to this component.
+
+#### 2. Middleware
+* A function that takes in action and depending on the action type, payload, etc, it can choose to let the action pass through, manipulate action, log it or stop it >> gate keeper of reducers
+* Middleware sits between action creator and reducer
+* Why middleware?
+* Usage: npm package `redux-middleware`
