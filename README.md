@@ -68,4 +68,14 @@ ___
 * A function that takes in action and depending on the action type, payload, etc, it can choose to let the action pass through, manipulate action, log it or stop it >> gate keeper of reducers
 * Middleware sits between action creator and reducer
 * Why middleware?
-* Usage: npm package `redux-middleware`
+* Middleware `redux-promise`:
+  * When receive the action -> check if it has a `promise` as a payload
+  * If yes -> stop the action -> after promise resolves, create new action and send to reducers
+
+#### 3. Avoid State Mutations in Reducers
+* Don't mutate the state
+* Ensure that always return new instance of state
+
+#### 4. Chart Component with [`react-sparklines`](https://github.com/borisyankov/react-sparklines)
+* Create reusable compoent for chart to avoid repeating code
+* Only need functional stateless component to render chart from data
