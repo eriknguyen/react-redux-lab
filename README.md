@@ -79,3 +79,27 @@ ___
 #### 4. Chart Component with [`react-sparklines`](https://github.com/borisyankov/react-sparklines)
 * Create reusable compoent for chart to avoid repeating code
 * Only need functional stateless component to render chart from data
+
+#### 5. Integrate Google map
+* `ref` system: allows to have direct reference to a HTML element that has been rendered to the page
+  * After render `<div ref="divName" />` in the component, the `div` can be refered by `this.refs.divName` anywhere in the same component
+* `componentDidMount()`: a life cycle method that is called right after the element is rendered
+* Using Google Map:
+  ```
+    new google.maps.Map(targetHTMLElement, {
+      //config of map
+      zoon: 12,
+      center: {
+        lat: 0,
+        lng: 0
+      }
+    });
+  ```
+
+#### 6. Review
+* Action creator `fetchWeather` using constant for `action.type`
+* Use of middleware `redux-promise`: detect the payload passed as promise to resolve promise and return new action
+* Avoid mutating state directly, create and return new object to take a place of existing state
+* Destructuring array in ES6
+* `react-sparklines` for chart
+* Make use of `react-google-maps` element
