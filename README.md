@@ -103,3 +103,11 @@ ___
 * Destructuring array in ES6
 * `react-sparklines` for chart
 * Make use of `react-google-maps` element
+
+### React Router & Redux Form
+___
+*Project: [simple-blog](https://github.com/eriknguyen/udemy-react-redux/tree/master/simple-blog)*
+
+#### 1. Initial setup
+* API: All requests are based on this [API Reference](http://reduxblog.herokuapp.com/)
+* Install react router: `npm install --save react-router-dom@4.0.0`
