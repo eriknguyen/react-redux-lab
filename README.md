@@ -111,3 +111,37 @@ ___
 #### 1. Initial setup
 * API: All requests are based on this [API Reference](http://reduxblog.herokuapp.com/)
 * Install react router: `npm install --save react-router-dom@4.0.0`
+
+#### 2. React Router
+* Overall flow:
+  1. User changes URL > signal `History` module
+  2. `History` module parses the change and tell `react-router` the new URL
+  3. `react-router` updates the react components based on the URL
+  4. `react-router` tell `React` the components need render
+  5. `React` render new content to view
+
+* Basic implementation
+  * `BrowerRouter` interacts with `History` library and decide exactly what to do based on the change in URL
+  * `Route` provides config to `react-router`
+  * Syntax: `<Route path="/route_url" component={RouteComponent} />`
+  * `Switch` contains collection of `Route` and render the first matched `Route`
+  * `Link` component from `react-router-dom` for an anchor tag
+
+#### 3. Implement basic routes
+* Create `/` route with `PostsIndex` component and `PostsReducer` to show list of posts
+* New Post form:
+  1. Scaffold `PostsNew` component
+  2. Add route config
+  3. Add navigation between index & new
+  4. Add form to `PostsNew`
+  5. Make action creator to save a post
+
+#### 4. Using [`redux-form`](http://redux-form.com/7.0.0/) for rich function form
+* Make sure to hookup form reducer from `redux-form` to the key `form` in `combineReducers()` function
+* Flow:
+  1. Identify different pieces of form state
+  2. Make `Field` component for each piece of state
+  3. User changes a `Field` input
+  4. `redux-form` auto handle changes
+  5. User submits form
+  6. Validate inputs & handle form submission (by callback)
