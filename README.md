@@ -139,13 +139,24 @@ ___
 #### 4. Using [`redux-form`](http://redux-form.com/7.0.0/) for rich function form
 * Make sure to hookup form reducer from `redux-form` to the key `form` in `combineReducers()` function
 * Flow:
-  1. Identify different pieces of form state
-  2. Make `Field` component for each piece of state
-  3. User changes a `Field` input
-  4. `redux-form` auto handle changes
-  5. User submits form
-  6. Validate inputs & handle form submission (by callback)
+    1. Identify different pieces of form state
+    2. Make `Field` component for each piece of state
+    3. User changes a `Field` input
+    4. `redux-form` auto handle changes
+    5. User submits form
+    6. Validate inputs & handle form submission (by callback)
 * Modules:
-  * `Field` only know how to interact with Redux Form without display itself, so `component` property help to return some JSX to render the Field
-  * `reduxForm` helper function (similar to `connect` from `react-redux`) -> allows our components to communicate with form reducer
-  * `<input {...field.input} />`: pass all event handlers from redux form to an input element
+    * `Field` only know how to interact with Redux Form without display itself, so `component` property help to return some JSX to render the Field
+    * `reduxForm` helper function (similar to `connect` from `react-redux`) -> allows our components to communicate with form reducer
+    * `<input {...field.input} />`: pass all event handlers from redux form to an input element
+* Form validation
+    * Use a helper function `validate()` that is auto called by redux form once the user submits form
+    * Return an errors object, if `errors === null`, the form is valid
+    * Use `field.meta.error` to access the error object from `error.fieldName` to display error message for field with `name="fieldName"`
+    * States of the redux form: *pristine*, *touched*, *invalid*
+* Submit form
+    * Redux Form only cares about state of the form, doesn't help posting form to backend
+
+* Use destructuring to access property from nested object:  
+    `const { meta: { touched, error } } = field;` means:  
+    * Get `touch` and `error` from `field.meta` and assign them to `touch` & `error` variables accordingly
