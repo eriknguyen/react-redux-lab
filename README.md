@@ -145,3 +145,7 @@ ___
   4. `redux-form` auto handle changes
   5. User submits form
   6. Validate inputs & handle form submission (by callback)
+* Modules:
+  * `Field` only know how to interact with Redux Form without display itself, so `component` property help to return some JSX to render the Field
+  * `reduxForm` helper function (similar to `connect` from `react-redux`) -> allows our components to communicate with form reducer
+  * `<input {...field.input} />`: pass all event handlers from redux form to an input element
