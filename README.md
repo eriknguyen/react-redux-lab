@@ -126,6 +126,8 @@ ___
   * Syntax: `<Route path="/route_url" component={RouteComponent} />`
   * `Switch` contains collection of `Route` and render the first matched `Route`
   * `Link` component from `react-router-dom` for an anchor tag
+  * Redirect between route: `this.props.history.push('/route/here');`
+  * Access params of route: `this.props.match.params.paramName`
 
 #### 3. Implement basic routes
 * Create `/` route with `PostsIndex` component and `PostsReducer` to show list of posts
@@ -160,3 +162,13 @@ ___
 * Use destructuring to access property from nested object:  
     `const { meta: { touched, error } } = field;` means:  
     * Get `touch` and `error` from `field.meta` and assign them to `touch` & `error` variables accordingly
+
+* POST form data to server
+    * Use a `createPost` action creator: user submit->validate form->call `onSubmit`->call action creator to make API request->after success, navigate to post list
+    * `OPTIONS` Request Method is used when making cross-origin request (CORS - Cross-Origin Resource Sharing)
+
+* ES6 syntax
+    * Key interpolation
+    * `{ ...currentObject }` return a new object that is same with currentObject
+
+* `function mapStateToProps({ posts }, ownProps)` -> `ownProps` is the props that going to the target component
