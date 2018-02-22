@@ -1,7 +1,27 @@
 # Udemy-React-Redux
 *Study logs and projects following React and Redux course by Stephen Grider on Udemy*
 
-## Modern React with Redux
+## Contents
+  * [Advanced topics](#advanced)
+  * [Basic topics](#basic)
+
+
+## <a id="advanced"></a>Advanced React and Redux
+
+### Testing
+#### 1. Basic concepts/keywords
+  * `describe`: group together similar tests, params: description and a function containing tests
+  * `it`: to test a single attribute of a target
+  * `expect`: to make a single assertion about a target
+
+
+
+___  
+  
+
+
+
+## <a id="basic"></a>Modern React with Redux
 
 ### YouTube video search
 ___
