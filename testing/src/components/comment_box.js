@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import * as actions from '../actions';
 
 class CommentBox extends Component {
   constructor(props) {
@@ -18,6 +20,9 @@ class CommentBox extends Component {
     e.preventDefault();
     
     // send ajax request to submit form to server
+    
+    // set redux state to comment value using `saveComment` action creator
+    this.props.saveComment(this.state.comment);
 
     // clear the form
     this.setState({
@@ -38,4 +43,5 @@ class CommentBox extends Component {
   }
 }
 
-export default CommentBox;
+// using shortcut for mapDispatchToProps
+export default connect(null, actions)(CommentBox);
