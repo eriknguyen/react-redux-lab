@@ -13,8 +13,16 @@
   * `describe`: group together similar tests, params: description and a function containing tests
   * `it`: to test a single attribute of a target
   * `expect`: to make a single assertion about a target
+  * `beforeEach`: for common setup of all test cases inside a `describe` block
 
+#### 2. Test decision?
+  * What do we care of how this component works?
+  * What features we need to make sure work correctly?
 
+#### 3. Different cases
+  * Expect child element using className: `expect(component.find('.class-name')).to.exist;`
+  * Test controlled input component with event simulation: `component.find('textarea').simulate('change', 'new comment');`
+  * Pass state and props to testing component with `renderComponent` function
 
 ___  
   
