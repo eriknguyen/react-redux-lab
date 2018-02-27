@@ -24,6 +24,13 @@
   * Test controlled input component with event simulation: `component.find('textarea').simulate('change', 'new comment');`
   * Pass state and props to testing component with `renderComponent` function
 
+#### 4. Testing with Redux
+  * Test action creator
+  * Test reducers - TDD comments reducer
+    - Test initial case first
+    - Test each possible actions that the reducer cares about
+  * 
+
 ___  
   
 
