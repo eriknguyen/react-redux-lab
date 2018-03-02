@@ -29,10 +29,23 @@
   * Test reducers - TDD comments reducer
     - Test initial case first
     - Test each possible actions that the reducer cares about
-  * 
 
-___  
-  
+___
+
+### Test Environment Setup
+#### 1. Purpose of Chai & Mocha - testing suite
+  * Something to run the test
+    - Loads test, runs them one by one, clean up after each, report errors
+    - Eg. Mocha
+  * Something to write test
+    - Write assertion for certain properties of the test subject
+    - eg. Chai
+
+#### 2. Write a test helper
+  * Setup testing environment to run like-a browser in the command line
+  * Build `renderComponent` helper that render given React component
+  * Build helpers for simulating events
+  * Setup `chai-jquery` for testing DOM element
 
 
 
