@@ -23,12 +23,12 @@ const $ = jquery(global.window);
 /**
  * Build `renderComponent` helper that render given React component
  */
-function renderComponent(ComponentClass) {
+function renderComponent(ComponentClass, props, state) {
   // create an instance of ComponentClass and render it into document with React test-utils
   const componentInstance = TestUtils.renderIntoDocument(
     // wrap the component with react-redux Provider
-    <Provider store={createStore(reducers)}>
-      <ComponentClass />
+    <Provider store={createStore(reducers, state)}>
+      <ComponentClass { ...props } />
     </Provider>
   );
   // return an actual DOM reference to that instancce wrapped by jQuery so chai-jquery can be used to test

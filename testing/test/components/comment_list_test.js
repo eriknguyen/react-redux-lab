@@ -8,6 +8,8 @@ describe('CommentList', () => {
     const props = {
       comments: ['test comment', 'new comment']
     };
+    // the `props` here serves as the initial values for the component and be used as the application state
+    // so it is passed in the param `state` in `renderComponent(ComponentClass, props, state)` function
     component = renderComponent(CommentList, null, props);
   });
 
