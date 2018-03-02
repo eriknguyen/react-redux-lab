@@ -6,7 +6,6 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        <div>React simple starter</div>
         <CommentBox />
         <CommentList />
       </div>
