@@ -47,6 +47,15 @@ ___
   * Build helpers for simulating events
   * Setup `chai-jquery` for testing DOM element
 
+---
+
+## Higher Order Components
+#### 1. Overview
+  * HOC is a function that take in a component and returns a new component with advanced/inhanced features or for other purposes, mainly to reuse component logic
+  * Eg. `connect` and `Provider` in `react-redux`
+
+#### 2. Authentication HOC
+  * Component to show protected resources + `require_auth` HOC = Composed component that will check user authentication before rendering
 
 
 ## <a id="basic"></a>Modern React with Redux
