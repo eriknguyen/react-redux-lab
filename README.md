@@ -56,6 +56,12 @@ ___
 
 #### 2. Authentication HOC
   * Component to show protected resources + `require_auth` HOC = Composed component that will check user authentication before rendering
+  * Redux review:  
+    - User click sign in button
+    - Call the `authenticate` action creator -> return an action (with type=`CHANGE_AUTH` and payload=`true`)
+    - Action will go to the Authentication Reducer -> return new state (what the payload is, `true` or `false`)
+    - Application state is updated by reducer
+    - New state flows into app -> re-render
 
 
 ## <a id="basic"></a>Modern React with Redux
