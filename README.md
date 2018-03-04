@@ -118,6 +118,9 @@ ___
 ---
 ### Authentication
 #### 1. Server Setup with Express
+  * `morgan`: Express logging middleware
+  * `body-parser`: parse incoming requests
+  * `nodemon`: file watcher for updating and reloading server for modified codes
 
 ---
 

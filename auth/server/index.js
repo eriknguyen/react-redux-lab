@@ -8,6 +8,12 @@ const app = express();
 
 // App Setup
 
+// Register Express server 
+// `morgan` -> for logging requests (mainly used for debugging)
+app.use(morgan('combined'));
+
+// `body-parser` -> parse incoming requests to json
+app.use(bodyParser.json({ type: '*/*' }));
 
 
 // Server Setup
