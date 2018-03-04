@@ -49,7 +49,7 @@ ___
 
 ---
 
-## Higher Order Components
+### Higher Order Components
 #### 1. Overview
   * HOC is a function that take in a component and returns a new component with advanced/inhanced features or for other purposes, mainly to reuse component logic
   * Eg. `connect` and `Provider` in `react-redux`
@@ -62,6 +62,11 @@ ___
     - Action will go to the Authentication Reducer -> return new state (what the payload is, `true` or `false`)
     - Application state is updated by reducer
     - New state flows into app -> re-render
+  * Context:
+    - Similar to props, but spans the entire tree
+    - Can access `context` without passing through levels
+    - Can be easily abused and be very careful when using
+    - The child can only access `context` after declaring `contextTypes` as a class-level property/variable (use `static`)
 
 
 ## <a id="basic"></a>Modern React with Redux
@@ -80,7 +85,7 @@ ___
 *Project dir: [`redux-book-list`](https://github.com/eriknguyen/udemy-react-redux/tree/master/redux-book-list)*
 #### 1. Reducer
 * *A function that return a piece of application state*
-    ```
+    ```js
     // application state
     {
       books: [/*book value*/], // -> Books Reducer
@@ -104,7 +109,7 @@ ___
 #### 3. Action & Action creator (for changing state)
 * Action Creator is a function that returns an action object, is called by some client event (user click, ajax load completion)
 * Action has `type` and optional action data 
-    ```
+    ```js
     {
       type: BOOK_SELECTED,
       book: { title: 'Book 1' }
