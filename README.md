@@ -126,6 +126,13 @@ ___
   * Setup model schema with `mongoose.Schema`
   * Setup mongodb and connect node app with database with `mongoose.connect()`
 
+#### 3. Authentication controller
+
+#### 4. Token-based authentication with JWT
+  * Using `passport` and `passport-jwt` packages
+  * [`passport`](http://www.passportjs.org/) - authentication for Node
+  * __Passport__ works with multiple different __strategies__
+
 ---
 
 ## <a id="basic"></a>Modern React with Redux
