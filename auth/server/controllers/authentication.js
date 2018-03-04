@@ -10,6 +10,14 @@ function tokenForUser(user) {
   }, config.secret);
 }
 
+exports.signin = function(req, res, next) {
+  // `done` callback supplied by `passport` ( `done(null, user)` ), take the `user` and assign it to `req.user`
+  res.send({
+    success: true,
+    token: tokenForUser(req.user)
+  })
+}
+
 exports.signup = function(req, res, next) {
   const email = req.body.email;
   const password = req.body.password;

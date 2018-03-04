@@ -4,6 +4,7 @@ const passport = require('passport');
 
 // middleware for checking authentication for requests
 const requireAuth = passport.authenticate( 'jwt', { session: false } );
+const requireSignin = passport.authenticate( 'local', { session: false } );
 
 module.exports = function(app) {
 
@@ -16,6 +17,7 @@ module.exports = function(app) {
     res.send({status: 'OK'})
   });
 
+  app.post('/signin', requireSignin, Authentication.signin);
   app.post('/signup', Authentication.signup);
 
 }
