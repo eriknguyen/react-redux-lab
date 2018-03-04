@@ -115,6 +115,11 @@ ___
     - There might be some middlewares that need to process with all `action`, if a later middleware modifies the `action` and we call `next`, the previous middlewares will be skipped
     - Also, to make sure the middlewares stack works without any assumption about the order of middlewares
 
+---
+### Authentication
+#### 1. Server Setup with Express
+
+---
 
 ## <a id="basic"></a>Modern React with Redux
 
