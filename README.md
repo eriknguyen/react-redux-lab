@@ -72,11 +72,48 @@ ___
   * Sits between action creators and reducers -> intercepts any action
   * Once actions flow into middleware, the middleware can choose to stop/log/modify/.../do anything with actions
 
-#### 2. Simple app to display list of users
+#### 2. Project Overview
+  * Simple app to display list of users
   * App Building Process:
     1. Build app with dummy data
     2. Replace dummy data with AJAX
     3. Write middleware to help fetch data
+
+#### 3. Middleware Stack
+  * Middleware to wait for promise to resolve then send an action to reducers
+  * Can have multiple middlewares to process the action
+  * __`next`__ keyword
+  * Multiple middlewares working with Redux:
+  ```js
+    const createStoreWithMiddleware = applyMiddleware(Middleware1, Middleware2, MiddlewareN)(createStore);
+  ```
+
+#### 4. Middleware Internals
+  ```js
+  /**
+   * Middleware always have the same signature:
+   *   - Take in `dispatch` function
+   *   - Return a function (take in `next`) 
+   *   - That function returns another function (take in `action`) that do actual works
+   *   - Send `action` to reducers or next middlewares
+   * 
+   */
+  export default function({ dispatch }) {
+    return next => action => {
+      // actual work for this middleware, eg. log the action
+      console.log(action);
+
+      // send the action to the next middleware in the middlewares stack
+      next(action);
+      // or send the new action to all the middleware again
+      dispatch(action);
+    };
+  }
+  ```
+  * Why `dispatch` over `next` for modified `action`:
+    - Once `action` is modified, it should go over all the middlewares once again
+    - There might be some middlewares that need to process with all `action`, if a later middleware modifies the `action` and we call `next`, the previous middlewares will be skipped
+    - Also, to make sure the middlewares stack works without any assumption about the order of middlewares
 
 
 ## <a id="basic"></a>Modern React with Redux
