@@ -31,7 +31,6 @@
     - Test each possible actions that the reducer cares about
 
 ___
-
 ### Test Environment Setup
 #### 1. Purpose of Chai & Mocha - testing suite
   * Something to run the test
@@ -48,7 +47,6 @@ ___
   * Setup `chai-jquery` for testing DOM element
 
 ---
-
 ### Higher Order Components
 #### 1. Overview
   * HOC is a function that take in a component and returns a new component with advanced/inhanced features or for other purposes, mainly to reuse component logic
@@ -67,6 +65,18 @@ ___
     - Can access `context` without passing through levels
     - Can be easily abused and be very careful when using
     - The child can only access `context` after declaring `contextTypes` as a class-level property/variable (use `static`)
+
+---
+### Middlewares
+#### 1. Middleware in Redux
+  * Sits between action creators and reducers -> intercepts any action
+  * Once actions flow into middleware, the middleware can choose to stop/log/modify/.../do anything with actions
+
+#### 2. Simple app to display list of users
+  * App Building Process:
+    1. Build app with dummy data
+    2. Replace dummy data with AJAX
+    3. Write middleware to help fetch data
 
 
 ## <a id="basic"></a>Modern React with Redux
