@@ -122,6 +122,10 @@ ___
   * `body-parser`: parse incoming requests
   * `nodemon`: file watcher for updating and reloading server for modified codes
 
+#### 2. Setup MongoDB and Mongoose ORM
+  * Setup model schema with `mongoose.Schema`
+  * Setup mongodb and connect node app with database with `mongoose.connect()`
+
 ---
 
 ## <a id="basic"></a>Modern React with Redux
