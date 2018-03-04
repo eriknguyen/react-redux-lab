@@ -1,3 +1,6 @@
+const Authentication = require('./controllers/authentication');
+
+
 module.exports = function(app) {
 
   /**
@@ -8,5 +11,7 @@ module.exports = function(app) {
   app.get('/', function(req, res, next) {
     res.send({status: 'OK'})
   });
+
+  app.post('/signup', Authentication.signup);
 
 }
