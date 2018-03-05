@@ -14,7 +14,10 @@ module.exports = function(app) {
    * next: mostly for error handling
    */
   app.get('/', requireAuth, function(req, res, next) {
-    res.send({status: 'OK'})
+    res.send({
+      status: 'OK',
+      message: 'Some message to client'
+    })
   });
 
   app.post('/signin', requireSignin, Authentication.signin);
