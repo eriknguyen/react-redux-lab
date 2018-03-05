@@ -148,6 +148,17 @@ ___
   ```
   * Setup some needed components, eg. react router
 
+#### 2. Signin Form with `redux-form`
+  * Scaffolding the signin form with `redux-form`
+  * Wire up `redux-form` with React form component:
+    ```js
+      reduxForm({
+        form: 'signin',
+        fields: ['email', 'password']
+      })(Signin)
+    ```
+  * Use helper function from `redux-form` to submit the form: `handleSubmit(callback)`
+
 ---
 
 ## <a id="basic"></a>Modern React with Redux
