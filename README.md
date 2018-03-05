@@ -155,9 +155,20 @@ ___
       reduxForm({
         form: 'signin',
         fields: ['email', 'password']
-      })(Signin)
+      }, mapStateToProps, actions)(Signin)
     ```
+  * `reduxForm` helper works similar to `react-redux`.`connect` method: take in `mapStateToProps` method and `actions`
   * Use helper function from `redux-form` to submit the form: `handleSubmit(callback)`
+
+#### 3. Action Creator with many responsibilities - `redux-thunk`
+  * `redux-thunk`:
+    - A middleware that helps with access to redux `dispatch` method
+    - Allow returning a function from action creators instead of an action
+    - That function is automatically called with `dispatch` method
+  * Review: action creator -> return object with type & payload
+
+#### 4. Server modification for CORS
+  * Use `cors` npm package
 
 ---
 
