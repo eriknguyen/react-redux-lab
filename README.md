@@ -116,7 +116,7 @@ ___
     - Also, to make sure the middlewares stack works without any assumption about the order of middlewares
 
 ---
-### Authentication
+### Authentication - Server
 #### 1. Server Setup with Express
   * `morgan`: Express logging middleware
   * `body-parser`: parse incoming requests
@@ -132,6 +132,21 @@ ___
   * Using `passport` and `passport-jwt` packages
   * [`passport`](http://www.passportjs.org/) - authentication for Node
   * __Passport__ works with multiple different __strategies__
+
+---
+### Authentication - Client
+
+#### 1. Component and State Design
+  * Auth-related application state
+  ```js
+  {
+    auth: {
+      authenticated: BOOLEAN, // change when user signin/signout/signup
+      error: STRING // change when auth-related error occurs
+    }
+  }
+  ```
+  * Setup some needed components, eg. react router
 
 ---
 
